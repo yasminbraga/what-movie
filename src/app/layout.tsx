@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { DataProvider } from "@/contexts/dataContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="bg-gradient-to-r from-[#ff5656] to-[#ff1c1c] h-screen flex flex-col items-center">
-          <Header />
-          {children}
-        </main>
+        <DataProvider>
+          <main className=" h-screen flex flex-col">
+            <Header />
+            {children}
+          </main>
+        </DataProvider>
       </body>
     </html>
   );
