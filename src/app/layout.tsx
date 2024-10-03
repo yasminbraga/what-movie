@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
 import { DataProvider } from "@/contexts/dataContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,9 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <DataProvider>
-          <main className=" h-screen flex flex-col">
-            <Header />
-            {children}
+          <main className="relative">
+            <Sidebar />
+            <div className="flex flex-col absolute left-[250px]">
+              <Header />
+              {children}
+            </div>
           </main>
         </DataProvider>
       </body>

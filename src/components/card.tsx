@@ -13,7 +13,7 @@ const Card: React.FC = () => {
   const time = minutesToHour(currentMovie.runtime);
 
   return (
-    <div className="w-[700px] h-[460px] relative my-6 rounded overflow-hidden bg-white">
+    <div className="w-[150px] h-[350px] lg:w-[700px] lg:h-[460px] relative my-6 rounded overflow-hidden bg-white">
       <Image
         src={`https://image.tmdb.org/t/p/w500/${currentMovie.poster_path}`}
         alt=""
