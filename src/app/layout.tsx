@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import MainContainer from "@/components/mainContainer";
 import Sidebar from "@/components/sidebar";
 import { DataProvider } from "@/contexts/dataContext";
 import type { Metadata } from "next";
@@ -23,10 +23,7 @@ export default function RootLayout({
         <DataProvider>
           <main className="relative">
             <Sidebar />
-            <div className="flex flex-col absolute left-[250px]">
-              <Header />
-              {children}
-            </div>
+            <MainContainer>{children}</MainContainer>
           </main>
         </DataProvider>
       </body>
