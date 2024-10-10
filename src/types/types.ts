@@ -25,4 +25,6 @@ export interface DataContextType {
   setLiked: Dispatch<SetStateAction<Array<MovieType> | []>>;
   notLiked: Array<MovieType>;
   setNotLiked: Dispatch<SetStateAction<Array<MovieType> | []>>;
+  menuIsOpen: boolean;
+  setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
 }

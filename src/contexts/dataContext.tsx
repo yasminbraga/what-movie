@@ -20,6 +20,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [currentMovie, setCurrentMovie] = useState<MovieType>();
   const [liked, setLiked] = useState<MovieType[] | []>([]);
   const [notLiked, setNotLiked] = useState<MovieType[] | []>([]);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const fetchData = useCallback(async () => {
     try {
@@ -58,6 +59,8 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         setLiked,
         notLiked,
         setNotLiked,
+        menuIsOpen,
+        setMenuIsOpen,
       }}
     >
       {children}

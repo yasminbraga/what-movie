@@ -26,7 +26,7 @@ const Actions: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center gap-8">
+    <div className="flex justify-center items-center gap-8">
       <IconBtn name="não curti!" icon="n-curti.png" onClick={handleNotLiked} />
       <button
         onClick={handleNext}
