@@ -18,20 +18,20 @@ const Card: React.FC = () => {
         src={`https://image.tmdb.org/t/p/w500/${currentMovie.poster_path}`}
         alt=""
         fill
-        className="absolute opacity-70 object-cover"
+        className="absolute object-cover opacity-80"
       />
-      <div className="absolute bottom-0 p-6 text-red">
+      <div className="absolute bottom-0 p-6 text-white bg-gradient-to-t from-zinc-600 to-transparent">
         <div className="flex flex-col lg:justify-between lg:flex-row lg:items-center">
           <div>
             <h2 className="text-xl lg:text-3xl uppercase font-extrabold">
               {currentMovie.original_title}
             </h2>
-            <p className="uppercase hidden lg:block">
-              {year}·
+            <p className="uppercase hidden lg:block font-medium text-xs mt-3">
+              {year} ·{" "}
               {currentMovie.genres.map(
-                (genre: { id: number; name: string }) => `${genre.name}/`
-              )}
-              ·{time}
+                (genre: { id: number; name: string }) => `${genre.name} `
+              )}{" "}
+              FILM · {time}
             </p>
           </div>
           <div className="flex flex-row justify-between items-center lg:flex-col lg:items-end">
@@ -39,7 +39,7 @@ const Card: React.FC = () => {
             <p>({currentMovie.vote_count} avaliações)</p>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex mt-3">
           <p className="line-clamp-1 flex-1 mr-2">{currentMovie.overview}</p>
           <span className="text-red-500 underline cursor-pointer flex-none justify-end">
             Ver Sinopse
